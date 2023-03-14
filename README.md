@@ -171,7 +171,7 @@ Final dataset output:
 #### Process Data
 1. Convert iPhone data formats to Kinect data formats (`tools/process_iphone_data.py`)
     * This tool converts everything to common image names, formats, and does distortion parameter fitting
-    * Code: <code> python tools/process_ipone_data.py <camera_name> --depth_type <depth_type> --scene_name <scene_name> --extrinstic </code>
+    * Code: <code> python tools/process_ipone_data.py <camera_name> --depth_type <depth_type> --scene_name <scene_name>  </code>
 2. Clean raw opti poses and Sync opti poses with frames (`tools/process_data.py`)
     * Code: <code> python tools/process_data.py —-scene_name [SCENE_NAME] </code>
 
