@@ -201,6 +201,7 @@ class ScenePoseRefiner():
                             bgr = cv2.line(bgr, (int(bb_proj[2][0]), int(bb_proj[2][1])), (int(bb_proj[5][0]), int(bb_proj[5][1])), color=(0,0,0), thickness=1)
                             bgr = cv2.line(bgr, (int(bb_proj[7][0]), int(bb_proj[7][1])), (int(bb_proj[4][0]), int(bb_proj[4][1])), color=(0,0,0), thickness=1)
 
+                bgr = cv2.resize(bgr, (1000, 600))
                 return bgr
 
             alt_view_cache = {}

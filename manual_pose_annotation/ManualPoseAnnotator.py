@@ -630,7 +630,7 @@ class ManualPoseAnnotator:
                 for pt_x, pt_y in obj_pts_projected:
                     bgr = cv2.circle(bgr, (int(pt_x), int(pt_y)), 1, color=colors[idx % len(colors)], thickness=-1)
 
-            cv2.imshow("rendered view", bgr)
+            cv2.imshow("rendered view", cv2.resize(bgr, (1000, 600)))
             cv2.waitKey(2000)
             cv2.destroyWindow("rendered view")
 

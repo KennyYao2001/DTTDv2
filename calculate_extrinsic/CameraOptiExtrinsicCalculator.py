@@ -105,8 +105,10 @@ class CameraOptiExtrinsicCalculator():
             
             else:
                 total_frames_skipped += 1
-                print("frame {0} did not successfully find ARUCO marker. Therefore it has been skipped. Total Frames Skipped: {1}".format(frame_id, total_frames_skipped))
+                #print("frame {0} did not successfully find ARUCO marker. Therefore it has been skipped. Total Frames Skipped: {1}".format(frame_id, total_frames_skipped))
             
+        print("Total Frames Skipped: {0}".format(total_frames_skipped))
+
         #extrinsic from virtual to camera sensor
         extrinsics = []
 
@@ -225,7 +227,10 @@ class CameraOptiExtrinsicCalculator():
                 tvec = tvec.squeeze()
 
                 cv2.aruco.drawAxis(frame_2, camera_intrinsics_dict[frame_id], camera_distortion_coefficients_dict[frame_id], rvec, tvec, 0.01)  # Draw Axis
+            
 
+            frame = cv2.resize(frame, (640, 480))
+            frame_2 = cv2.resize(frame_2, (640, 480))
             cv2.imshow("original ARUCO", frame_2)
             cv2.imshow("computed extrinsic validation", frame)
             cv2.waitKey(30)
