@@ -63,7 +63,7 @@ def load_object_meshes_trimesh(object_ids):
     object_meshes = {}
     for object_id, object_name in object_ids_and_names:
         obj_path = os.path.join(object_dir, object_name, object_name + ".obj")
-        obj_mesh = trimesh.load(obj_path)
+        obj_mesh = trimesh.load(obj_path, force='mesh')
         object_meshes[object_id] = {'name': object_name, 'mesh': obj_mesh}
 
     return object_meshes
