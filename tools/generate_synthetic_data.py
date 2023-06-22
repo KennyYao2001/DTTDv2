@@ -32,6 +32,11 @@ def main():
 
     os.mkdir(args.output_scene)
 
+    print(args.objects)
+    # Hardcoded remove object id of Hammer (16) and Chicken Can (20)
+    args.objects = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19]
+    print(args.objects)
+
     synthetic_generator = SyntheticDataGenerator(args.objects, args.seed)
     synthetic_generator.generate_synthetic_scene(args.output_scene, args.num_frames)
 

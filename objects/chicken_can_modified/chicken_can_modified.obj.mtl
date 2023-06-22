@@ -3,20 +3,16 @@
 # Converted by Meshlab Group
 #
 
-newmtl material_0
-Ka 0.200000 0.200000 0.200000
-Kd 0.752941 0.752941 0.752941
-Ks 1.000000 1.000000 1.000000
-Tr 1.000000
-illum 2
+newmtl defaultMat.002
 Ns 0.000000
-
-newmtl material_1
-Ka 0.200000 0.200000 0.200000
-Kd 1.000000 1.000000 1.000000
-Ks 1.000000 1.000000 1.000000
-Tr 1.000000
-illum 2
-Ns 0.000000
-map_Kd texture_map.png
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd textured_0_FXH9HeRe.jpg
+normal textured_0_norm_FXH9HeRe.jpg
+map_ao textured_0_occl_FXH9HeRe.jpg
+map_Pr textured_0_roughness_FXH9HeRe.jpg
 

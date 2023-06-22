@@ -18,7 +18,7 @@ from manual_pose_annotation import ManualPoseAnnotator
 from utils.affine_utils import invert_affine
 from utils.camera_utils import load_extrinsics
 from utils.constants import SCENES_DIR
-from utils.object_utils import load_object_meshes
+from utils.object_utils import load_object_meshes, load_object_meshes_trimesh
 from utils.pose_dataframe_utils import convert_pose_df_to_dict
 
 def main():

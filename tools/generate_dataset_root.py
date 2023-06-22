@@ -6,6 +6,7 @@ import argparse
 import random
 import shutil
 import numpy as np
+import json
 
 import os, sys
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -59,7 +60,11 @@ def main():
     with open(os.path.join(args.output, ROOT_TRAIN_DATA_LIST_FILE), 'w') as f:
         for each_scene_path in train_folder_path_list:
             data_dir = os.path.join(each_scene_path, "data")
+            # TODO: checked_id change here
+            with open(os.path.join(each_scene_path, 'saved_frame_ids.json'),'r') as file:
+                checked_ids = json.load(file)
             ids = [x[:x.find("_")] for x in list(os.listdir(data_dir)) if "meta.json" in x]
+            ids = [ids[i] for i in checked_ids]
             ids = ids[::SKIP_FRAMES_NUM + 1]
             file_names = [(str(os.path.basename(os.path.normpath(each_scene_path))) + "/data/" + each_id +'\n') for each_id in ids]
             f.writelines(file_names)
@@ -67,7 +72,11 @@ def main():
     with open(os.path.join(args.output, ROOT_TEST_DATA_LIST_FILE), "w") as f:
         for each_scene_path in test_folder_path_list:
             data_dir = os.path.join(each_scene_path, "data")
+            # TODO: checked_id change here
+            with open(os.path.join(each_scene_path, 'saved_frame_ids.json'),'r') as file:
+                checked_ids = json.load(file)
             ids = [x[:x.find("_")] for x in list(os.listdir(data_dir)) if "meta.json" in x]
+            ids = [ids[i] for i in checked_ids]
             ids = ids[::SKIP_FRAMES_NUM + 1]
             file_names = [(str(os.path.basename(os.path.normpath(each_scene_path))) + "/data/" + each_id + "\n") for each_id in ids]
             f.writelines(file_names) 
