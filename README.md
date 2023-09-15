@@ -149,7 +149,7 @@ Final dataset output:
       * Code: <code> python tools/caculate_camera_extrinsic.py —-scene_name <scene_name> </code>
   4. Output will be placed in `cameras/<camera name>/extrinsic.txt`
 
-### Scene Collection Process (objects 6D pose collections)
+### Scene Collection Process (objects 6DoF pose collections)
 #### Data Collection Step
 1. Setup LiDARDepth APP (ARKit version) using Xcode (Need to reinstall before each scene).
 2. Start the OptiTrack recording.
